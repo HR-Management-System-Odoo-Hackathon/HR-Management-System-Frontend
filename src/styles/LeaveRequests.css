@@ -1,0 +1,74 @@
+.leave-page {
+  padding: 24px;
+}
+
+.leave-page-content {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.leave-form {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leave-form select,
+.leave-form input,
+.leave-form textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.leave-form button {
+  margin-top: 10px;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.leave-error {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+.leave-list {
+  flex: 1;
+  min-width: 280px;
+}
+
+.leave-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leave-card-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.leave-cancel-btn {
+  margin-top: 8px;
+  background: none;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}

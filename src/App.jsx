@@ -8,7 +8,7 @@ import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
 import SignIn from "./pages/SignIn";
 import VerifyEmail from "./pages/VerifyEmail";
-
+import LeaveRequests from "./pages/LeaveRequest";
 export default function App() {
   return (
     <AuthProvider>
@@ -22,6 +22,11 @@ export default function App() {
           <Route path="/signin" element={<SignIn />} />
 
           <Route path="/verify-email" element={<VerifyEmail />} />
+          <Route path="/leave-requests" element={
+            <ProtectedRoute>
+              <LeaveRequests />
+            </ProtectedRoute>
+          } />
 
           <Route
             path="/dashboard"

@@ -80,7 +80,7 @@ export default function Dashboard() {
                 index={3}
                 title="Leave Requests"
                 description="Apply or check leave status."
-                onClick={() => comingSoon("Leave Requests")}
+                onClick={() => navigate("/leave-requests")}
                 color="#3f8f5f"
               />
               <DashboardCard
@@ -128,7 +128,7 @@ export default function Dashboard() {
                 index={3}
                 title="Leave Approvals"
                 description="Approve or reject leave requests."
-                onClick={() => comingSoon("Leave Approvals")}
+                onClick={() => navigate("/leave-requests")}
                 color="#3f8f5f"
               />
               <DashboardCard
