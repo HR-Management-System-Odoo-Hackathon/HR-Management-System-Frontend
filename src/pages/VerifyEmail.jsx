@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { verifyEmail } from "../api/auth";
+import { useNavigate} from "react-router-dom";
 
 export default function VerifyEmail() {
   const [searchParams] = useSearchParams();
   const [status, setStatus] = useState("verifying"); // verifying | success | error
   const [message, setMessage] = useState("Verifying your email…");
+
+  const navigate = useNavigate();
+
+
 
   useEffect(() => {
     const token = searchParams.get("token");
@@ -18,6 +23,9 @@ export default function VerifyEmail() {
       .then((data) => {
         setStatus("success");
         setMessage(data.message || "Email verified successfully.");
+        const timer = setTimeout(() => {
+          navigate("/dashboard");
+        }, 1500);
       })
       .catch((err) => {
         setStatus("error");
@@ -39,9 +47,9 @@ export default function VerifyEmail() {
         {status === "success" && <div className="alert alert-success">{message}</div>}
         {status === "error" && <div className="alert alert-error">{message}</div>}
 
-        <div className="auth-footer">
+        {/* <div className="auth-footer">
           <Link to="/signin">Go to sign in</Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

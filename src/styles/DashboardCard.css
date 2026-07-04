@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+.dashboard-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #d7dce6;
+  border-radius: 4px;
+  padding: 26px 24px 22px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 176px;
+  overflow: hidden;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+/* left accent rail instead of a top bar - reads like a filed tab */
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent, #2f3b76);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent, #2f3b76);
+  box-shadow: 0 10px 24px rgba(30, 42, 74, 0.10);
+}
+
+.dashboard-card:hover .card-stamp {
+  opacity: 1;
+  transform: rotate(-8deg) scale(1);
+}
+
+/* punch-stamp signature element: an inked, rotated index mark,
+   like a time-clock stamp in the corner of a card */
+.card-stamp {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent, #2f3b76);
+  border: 1.5px dashed var(--accent, #2f3b76);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  transform: rotate(-8deg) scale(0.94);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+  padding-right: 50px;
+  color: #1e2a4a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.dashboard-card p {
+  font-family: 'Inter', sans-serif;
+  color: #6b7280;
+  margin: 14px 0 20px;
+  line-height: 1.6;
+  font-size: 14.5px;
+  flex: 1;
+}
+
+.card-btn {
+  align-self: flex-start;
+  border: 1px solid var(--accent, #2f3b76);
+  background: transparent;
+  color: var(--accent, #2f3b76);
+  padding: 9px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: background .2s ease, color .2s ease;
+}
+
+.card-btn:hover {
+  background: var(--accent, #2f3b76);
+  color: #ffffff;
+}
